@@ -22,8 +22,6 @@ printer.on('ready', function(){
         .big(true)
         .printLine(' TESSEL! ')
         .lineFeed(3)
-        .printImageData(imageWidth, imageHeight, imageData)
-        .lineFeed(3)
         .print(function(){
             console.info('Printer finished!');
         });

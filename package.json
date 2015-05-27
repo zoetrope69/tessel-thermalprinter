@@ -1,6 +1,6 @@
 {
   "name": "tessel-thermalprinter",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A2 micro panel thermal printer module for Tessel",
   "main": "index.js",
   "directories": {
