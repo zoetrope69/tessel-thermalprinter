@@ -121,7 +121,8 @@ Makes text aligned center
 
 #### Images
 
-_coming soon lol x_
+&#x20;<a href="#api-printer-printImageData-width-height-imgData" name="api-printer-printImageData-width-height-imgData">#</a> printer<b>.printImageData</b>( width, height, imgData )  
+Prints image. _Image width must be 384px, height cannot exceed 65635px._
 
 #### Barcodes
 
