@@ -34,23 +34,111 @@ printer.on('ready', function(){
 
 ### Methods
 
-&#x20;<a href="#api-printer-setMaxPrintingDots-maxPrintingDots-callback" name="api-printer-setMaxPrintingDots-maxPrintingDots-callback">#</a> printer<b>.setMaxPrintingDots</b>( maxPrintingDots, callback() )
-_Set the max printing dots (0-255), unit: (n+1)*8 dots, default: 7 ((7+1)*8 = 64 dots)_
-> According to section 5.2.9 of the [datasheet](http://www.adafruit.com/datasheets/A2-user%20manual.pdf): "The more max heating dots, the more peak current will cost when printing, the faster printing speed. The max heating dots is 8*(n+1).""
+#### Settings
+
+&#x20;<a href="#api-printer-setMaxPrintingDots-maxPrintingDotsValue-callback" name="api-printer-setMaxPrintingDots-maxPrintingDotsValue-callback">#</a> printer<b>.setMaxPrintingDots</b>( maxPrintingDotsValue, callback() )  
+_Set the max printing dots (0-255). _Default: 7 (( 7 + 1 ) * 8 = 64dots). Unit: ( n + 1 ) * 8dots_
+> According to section 5.2.9 of the [datasheet](http://www.adafruit.com/datasheets/A2-user%20manual.pdf): "The more max heating dots, the more peak current will cost when printing, the faster printing speed. The max heating dots is 8 * ( n + 1 ).""
 
 
-&#x20;<a href="#api-printer-setHeatingTime-heatingTime-callback" name="api-printer-setHeatingTime-heatingTime-callback">#</a> printer<b>.setHeatingTime</b>( heatingTime, callback() )  
-Set the heating time (3-255), unit: 10µs, default: 80 (800µs)
+&#x20;<a href="#api-printer-setHeatingTime-heatingTimeValue-callback" name="api-printer-setHeatingTime-heatingTimeValue-callback">#</a> printer<b>.setHeatingTime</b>( heatingTimeValue, callback() )  
+Set the heating time (3-255). _Default: 80 (800µs). Unit: 10µs._
 > According to section 5.2.9 of the [datasheet](http://www.adafruit.com/datasheets/A2-user%20manual.pdf): "The more heating time, the more density, but the slower printing speed. If heating time is too short, blank page may occur."
 
 
-&#x20;<a href="#api-printer-setHeatingInterval-heatingInterval-callback" name="api-printer-setHeatingInterval-heatingInterval-callback">#</a> printer<b>.setHeatingInterval</b>( heatingInterval, callback() )  
-Set the heating interval (0-255), unit: 10µs, default: 2 (20µs)
+&#x20;<a href="#api-printer-setHeatingInterval-heatingIntervalValue-callback" name="api-printer-setHeatingInterval-heatingIntervalValue-callback">#</a> printer<b>.setHeatingInterval</b>( heatingIntervalValue, callback() )  
+Set the heating interval (0-255). _Default: 2 (20µs). Unit: 10µs._
 > According to section 5.2.9 of the [datasheet](http://www.adafruit.com/datasheets/A2-user%20manual.pdf): "The more heating interval, the more clear, but the slower printing speed."
 
 
+&#x20;<a href="#api-printer-setLineSpacing-spacing" name="api-printer-setLineSpacing-spacing">#</a> printer<b>.setLineSpacing</b>( spacing )  
+Set the space between each printed line vertically
+
+#### Main methods
+
+&#x20;<a href="#api-printer-reset" name="api-printer-reset">#</a> printer<b>.reset</b>()  
+Resets printer
+
+
 &#x20;<a href="#api-printer-print-callback" name="api-printer-print-callback">#</a> printer<b>.print</b>( callback() )  
-Runs commands and prints
+Runs commands and prints. _Run this last._
+
+
+&#x20;<a href="#api-printer-printLine-text" name="api-printer-printLine-text">#</a> printer<b>.printLine</b>( text )  
+Write text to printer
+
+
+&#x20;<a href="#api-printer-lineFeed-amountOfLines" name="api-printer-lineFeed-amountOfLines">#</a> printer<b>.lineFeed</b>( amountOfLines )  
+Feed blank lines out of the printer specified by argument
+
+
+#### Printing modes
+
+&#x20;<a href="#api-printer-bold-onOff" name="api-printer-bold-onOff">#</a> printer<b>.bold</b>( onOff )  
+Makes text bolder
+
+
+&#x20;<a href="#api-printer-big-onOff" name="api-printer-big-onOff">#</a> printer<b>.big</b>( onOff )  
+Makes text bigger
+
+
+&#x20;<a href="#api-printer-underline-onOff" name="api-printer-underline-onOff">#</a> printer<b>.underline</b>( onOff )  
+Makes text underlined
+
+
+&#x20;<a href="#api-printer-small-onOff" name="api-printer-small-onOff">#</a> printer<b>.small</b>( onOff )  
+Makes text smaller
+
+
+&#x20;<a href="#api-printer-upsideDown-onOff" name="api-printer-upsideDown-onOff">#</a> printer<b>.upsideDown</b>( onOff )  
+Makes text upside down
+
+
+&#x20;<a href="#api-printer-inverse-onOff" name="api-printer-inverse-onOff">#</a> printer<b>.inverse</b>( onOff )  
+Makes text black on white
+
+
+&#x20;<a href="#api-printer-left-onOff" name="api-printer-left-onOff">#</a> printer<b>.left</b>( onOff )  
+Makes text aligned left
+
+
+&#x20;<a href="#api-printer-right-onOff" name="api-printer-right-onOff">#</a> printer<b>.right</b>( onOff )  
+Makes text aligned right
+
+
+&#x20;<a href="#api-printer-center-onOff" name="api-printer-center-onOff">#</a> printer<b>.center</b>( onOff )  
+Makes text aligned center
+
+
+#### Images
+
+_coming soon lol x_
+
+#### Barcodes
+
+&#x20;<a href="#api-printer-barcodeTextPosition-positionValue" name="api-printer-barcodeTextPosition-positionValue">#</a> printer<b>.barcodeTextPosition</b>( positionValue )  
+Set text position relative to barcode.
+_Positions are:
+0: Not printed
+1: Above the barcode
+2: Below the barcode
+3: Both above and below the barcode_
+
+
+&#x20;<a href="#api-printer-barcode-Printer-BARCODE_TYPES-type-barcodeData" name="api-printer-barcode-Printer-BARCODE_TYPES-type-barcodeData">#</a> printer<b>.barcode</b>( Printer.BARCODE_TYPES.type, barcodeData )  
+Print barcode.
+_The types you can use are: `UPCA, UPCE, EAN13, EAN8, CODE39, I25, CODEBAR, CODE93, CODE128, CODE11, MSI`_
+
+
+#### Other
+
+&#x20;<a href="#api-printer-indent-amountOfColumns" name="api-printer-indent-amountOfColumns">#</a> printer<b>.indent</b>( amountOfColumns )  
+Create an indentation for text by an amount of cplumns
+
+
+&#x20;<a href="#api-printer-horizontalLine-length" name="api-printer-horizontalLine-length">#</a> printer<b>.horizontalLine</b>( length )  
+Draw a horizontal line at a certain length
+
 
 _check the example, will add the rest later_
 
