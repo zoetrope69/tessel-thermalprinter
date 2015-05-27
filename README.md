@@ -22,13 +22,22 @@ var thermalprinter = require('tessel-thermalprinter');
 var printer = thermalprinter.use(tessel.port['A']);
 
 printer.on('ready', function(){
-    console.log('printer ready');
+
+    console.info('Printer ready!');
+
     printer
-        .printLine('hello world')
+        .center()
+        .horizontalLine(16)
+        .printLine("we're printing with")
+        .inverse(true)
+        .big(true)
+        .printLine(' TESSEL! ')
+        .lineFeed(3)
         .print(function(){
-            console.log('printer finished');
+            console.info('Printer finished!');
             process.exit();
         });
+
 });
 ```
 
