@@ -13,7 +13,7 @@ Support for the A2 micro panel thermal printer module for Tessel.
 npm install tessel-thermalprinter
 ```
 
-###Example
+### Example
 ```js
 // Any copyright is dedicated to the Public Domain.
 // http://creativecommons.org/publicdomain/zero/1.0/
@@ -61,22 +61,23 @@ printer.on('ready', function(){
 });
 ```
 
-###Methods
+### Methods
 
 _todo_
 
-###Events
+### Events
 
-[#] printer.on( 'ready', callback() ) Emitted upon reset and printing settings on printer.
+&#x20;<a href="#api-printer-on-ready-callback-Emitted-upon-reset-and-printing-settings-on-printer" name="api-printer-on-ready-callback-Emitted-upon-reset-and-printing-settings-on-printer">#</a> printer<b>.on</b>( 'ready', callback() )  
+ Emitted upon reset and printing settings on printer.  
 
 
-###Further Examples  
-
-_todo_
-
-###Hardware specifications and Advanced Information
+### Further Examples  
 
 _todo_
 
-###Licensing  
+### Hardware specifications and Advanced Information
+
+_todo_
+
+### Licensing  
 MIT or Apache 2.0
