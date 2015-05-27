@@ -2,8 +2,10 @@
 var util = require('util'),
 	EventEmitter = require('events').EventEmitter;
 
-var Printer = function(uart, opts) {
+var Printer = function(port, opts, callback) {
 	EventEmitter.call(this);
+
+	var uart = new port.UART({ baudrate: opts.baudrate }); // baudrate for printer
 
 	// uart used by printer
 	if (!uart.write) throw new Error('uart must have a write function');
@@ -22,6 +24,7 @@ var Printer = function(uart, opts) {
 
 	// command queue
 	this.commandQueue = [];
+
 	// printmode bytes (normal by default)
 	this.printMode = 0;
 
@@ -307,4 +310,13 @@ Printer.prototype.barcode = function(type, data) {
 	return this.writeCommands(commands);
 };
 
-module.exports = Printer;
+function use(port, opts, callback){
+	return new Printer(port, opts, callback);
+}
+
+/**
+ * Public API
+ */
+
+exports.Printer = Printer;
+exports.use = use;

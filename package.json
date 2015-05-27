@@ -1,8 +1,8 @@
 {
   "name": "tessel-thermalprinter",
   "version": "0.1.0",
-  "description": "\"A2 micro panel thermal printer module for Tessel\"",
-  "main": "./src/printer.js",
+  "description": "A2 micro panel thermal printer module for Tessel",
+  "main": "index.js",
   "directories": {
     "example": "examples"
   },
@@ -19,7 +19,10 @@
     "tessel"
   ],
   "author": "Zac Colley <hi@zaccolley.com> (http://zaccolley.com/)",
-  "license": "ISC",
+  "hardware": {
+    "./examples": false
+  },
+  "license": "MIT/Apache 2.0",
   "bugs": {
     "url": "https://github.com/zaccolley/tessel-thermalprinter/issues"
   },
