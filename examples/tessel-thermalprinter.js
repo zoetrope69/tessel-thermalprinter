@@ -7,7 +7,7 @@ printer module for Tessel.
 *********************************************/
 
 var tessel = require('tessel');
-var thermalprinter = require('../'); // Replace '../' with 'ir-attx4' in your own code
+var thermalprinter = require('../'); // Replace '../' with 'tessel-thermalprinter' in your own code
 var printer = thermalprinter.use(
     tessel.port['A'],
     {

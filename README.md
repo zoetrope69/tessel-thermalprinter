@@ -67,8 +67,7 @@ _todo_
 
 ### Events
 
-&#x20;<a href="#api-printer-on-ready-callback-Emitted-upon-reset-and-printing-settings-on-printer" name="api-printer-on-ready-callback-Emitted-upon-reset-and-printing-settings-on-printer">#</a> printer<b>.on</b>( 'ready', callback() )  
- Emitted upon reset and printing settings on printer.  
+&#x20;<a href="#api-printer-on-ready-callback-Emitted-upon-reset-and-printing-settings-on-printer" name="api-printer-on-ready-callback-Emitted-upon-reset-and-printing-settings-on-printer">#</a> printer<b>.on</b>( 'ready', callback() ) Emitted upon reset and printing settings on printer.  
 
 
 ### Further Examples  
