@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util'),
-	EventEmitter = require('events').EventEmitter;
+	EventEmitter = require('events').EventEmitter,
+	async = require('async');
 
 var Printer = function(port, opts, callback) {
 	EventEmitter.call(this);
@@ -68,19 +69,18 @@ Printer.prototype.setHeatingInterval = function(heatingInterval, callback){
 	callback();
 };
 
-Printer.prototype.print = function(callback){
+Printer.prototype.print = function(callback) {
 	var _self = this;
-	var commands = _self.commandQueue;
-
-	for(var i = 0; i < commands.length; i++){
-		var command = commands[i];
-
-		_self.uart.write(command);
-	}
-
-	setTimeout(function(){
-		callback();
-	}, 500);
+	async.eachSeries(
+		_self.commandQueue,
+		function(command, callback) {
+			_self.uart.write(command, callback);
+		},
+		function(err) {
+			_self.commandQueue = [];
+			callback();
+		}
+	);
 };
 
 Printer.prototype.writeCommand = function(command) {

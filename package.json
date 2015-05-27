@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/zaccolley/tessel-thermalprinter/issues"
   },
-  "homepage": "https://github.com/zaccolley/tessel-thermalprinter"
+  "homepage": "https://github.com/zaccolley/tessel-thermalprinter",
+  "dependencies": {
+    "async": "^1.0.0"
+  }
 }
