@@ -1,19 +1,22 @@
-# Thermal Printer for Tessel [![Build Status](https://travis-ci.org/zaccolley/tessel-thermalprinter.svg)](https://travis-ci.org/zaccolley/tessel-thermalprinter) [![Code Climate](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/badges/gpa.svg)](https://codeclimate.com/github/zaccolley/tessel-thermalprinter) [![Test Coverage](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/badges/coverage.svg)](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/coverage)
+# Thermal Printer for Tessel
+
+[![Build Status](https://travis-ci.org/zaccolley/tessel-thermalprinter.svg)](https://travis-ci.org/zaccolley/tessel-thermalprinter) [![Code Climate](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/badges/gpa.svg)](https://codeclimate.com/github/zaccolley/tessel-thermalprinter) [![Test Coverage](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/badges/coverage.svg)](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/coverage)
+
 Support for the A2 micro panel thermal printer module for Tessel.
 
-_this module is based on [xseignard's thermalprinter](https://github.com/xseignard/thermalPrinter) package_
+_This module is based on [xseignard's thermalprinter](https://github.com/xseignard/thermalPrinter) package_
 
 ### Important Information Specific to Module
 
 + Needs a seperate 5v - 9V, 2A power supply. The Tessel can't power this. 9V is faster.
 + You can do a test print by holding the printer button while powering.
-+ A, B, D ports only. C doesn't support UART yet.
-+ Wire it up so: Ground (printer) to Ground (Tessel: Pin 0), RX (printer) to RX/G1 (Tessel: Pin 8) _add pics later_
 
 ### Installation
 ```sh
 npm install tessel-thermalprinter
 ```
++ A, B, D ports only. C doesn't support UART yet.
++ Wire it up so: Ground (printer) to Ground (Tessel: Pin 0), RX (printer) to RX/G1 (Tessel: Pin 8) _add pics later_
 
 ### Example
 ```js
