@@ -5,22 +5,36 @@ var util = require('util'),
 var Printer = function(port, opts, callback) {
 	EventEmitter.call(this);
 
-	var uart = new port.UART({ baudrate: opts.baudrate }); // baudrate for printer
-
-	// uart used by printer
-	if (!uart.write) throw new Error('uart must have a write function');
-	this.uart = uart;
-
 	opts = opts || {};
 
 	// Max printing dots (0-255), unit: (n+1)*8 dots, default: 7 ((7+1)*8 = 64 dots)
 	this.maxPrintingDots = opts.maxPrintingDots || 7;
+	/* The more max heating dots, the more peak current will cost when printing,
+	 * the faster printing speed. The max heating dots is 8*(n+1).
+	 */
 
 	// Heating time (3-255), unit: 10µs, default: 80 (800µs)
 	this.heatingTime = opts.heatingTime || 80;
+	/* The more heating time, the more density, but the slower printing speed.
+	 * If heating time is too short, blank page may occur.
+	 */
 
 	// Heating interval (0-255), unit: 10µs, default: 2 (20µs)
 	this.heatingInterval = opts.heatingInterval || 2;
+	/* The more heating interval, the more clear, but the slower printing speed.
+	 */
+
+	// baudrate for the printer default: 19200
+	this.baudrate = opts.baudrate || 19200;
+	/* can be found by doing a print test. hold the button printer while
+	 * powering the printer on and it should spit out some shit at the
+	 * bottom is it should say the baudrate */
+
+	var uart = new port.UART({ baudrate: this.baudrate }); // baudrate for printer
+
+	// uart used by printer
+	if (!uart.write) throw new Error('uart must have a write function');
+	this.uart = uart;
 
 	// command queue
 	this.commandQueue = [];
@@ -34,6 +48,24 @@ var Printer = function(port, opts, callback) {
 	});
 };
 util.inherits(Printer, EventEmitter);
+
+Printer.prototype.setMaxPrintingDots = function(maxPrintingDots, callback){
+	this.maxPrintingDots = maxPrintingDots;
+	this.sendPrintingParams();
+	callback();
+};
+
+Printer.prototype.setHeatingTime = function(heatingTime, callback){
+	this.heatingTime = heatingTime;
+	this.sendPrintingParams();
+	callback();
+};
+
+Printer.prototype.setHeatingInterval = function(heatingInterval, callback){
+	this.heatingInterval = heatingInterval;
+	this.sendPrintingParams();
+	callback();
+};
 
 Printer.prototype.print = function(callback){
 	var _self = this;
