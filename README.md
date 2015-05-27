@@ -1,56 +1,12 @@
-# Control the Adafruit/Sparkfun thermal printer from node.js
-[![Build Status](https://travis-ci.org/xseignard/thermalPrinter.svg)](https://travis-ci.org/xseignard/thermalPrinter) [![Code Climate](https://codeclimate.com/github/xseignard/thermalPrinter/coverage.png)](https://codeclimate.com/github/xseignard/thermalPrinter)
+# thermal printer for tessel
 
+1. power printer with 5-9v supply (seperate to Tessel)
+2. update baudrate in code (you can find this on the test print by holding button on printer while powering)
+3. use A, B, D ports. c doesn't support uart. ground (printer) to ground (tessel pin 0), rx (printer) to tx/g1 (tessel pin 8)
+4. see example code for usage and original thermal printer for usage of the printer stuff: https://github.com/xseignard/thermalPrinter
 
-Largely inspired by http://electronicfields.wordpress.com/2011/09/29/thermal-printer-dot-net/
-
-You can print images, but they need to be 384px wide.
-
-It's a fluent API, so you can chain functions, but don't forget to call `print` at the end to actually print something!
-
-## Crappy schematics
-
-You'll need an USB/Serial converter.
-
-![schematics](/images/schema.png)
-
-
-## Usage
-- install with `npm install thermalprinter --save` 
-- check the demo sample:
-
-```js
-var SerialPort = require('serialport').SerialPort,
-	serialPort = new SerialPort('/dev/ttyUSB0', {
-		baudrate: 19200
-	}),
-	Printer = require('thermalprinter');
-
-var path = __dirname + '/images/nodebot.png';
-
-serialPort.on('open',function() {
-	var printer = new Printer(serialPort);
-	printer.on('ready', function() {
-		printer
-			.indent(10)
-			.horizontalLine(16)
-			.bold(true)
-			.indent(10)
-			.printLine('first line')
-			.bold(false)
-			.inverse(true)
-			.big(true)
-			.right()
-			.printLine('second line')
-			.printImage(path)
-			.print(function() {
-				console.log('done');
-				process.exit();
-			});
-	});
-});
-```
-
-## Demo
-
-![demo](/images/demo.gif)
+# todo
+1. proper async for print function
+2. implement some kind of images functionality
+3. add back in tests/rework to styleguide for tessel modules
+4. better docs than this cmonnn

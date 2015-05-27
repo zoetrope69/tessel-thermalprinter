@@ -1,45 +1,27 @@
 {
-  "name": "thermalprinter",
-  "version": "0.2.0",
-  "description": "Use node.js to communicate with Adafruit/Sparkfun Thermal Printer",
+  "name": "tessel-thermalprinter",
+  "version": "0.1.0",
+  "description": "\"A2 micro panel thermal printer module for Tessel\"",
+  "main": "./src/printer.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/xseignard/thermalPrinter.git"
-  },
-  "main": "./src/printer.js",
-  "author": "Xavier Seignard <xavier.seignard@gmail.com>",
-  "contributors": [
-    {
-      "name": "Flurin Egger",
-      "email": "<flurin@digitpaint.nl>"
-    }
-  ],
-  "scripts": {
-    "test": "make test"
+    "url": "https://github.com/zaccolley/tessel-thermalprinter"
   },
   "keywords": [
-    "adafruit",
-    "printer",
     "thermal",
-    "serialport"
+    "printer",
+    "tessel"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/xseignard/thermalPrinter",
+  "author": "Zac Colley <hi@zaccolley.com> (http://zaccolley.com/)",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xseignard/thermalPrinter/issues"
+    "url": "https://github.com/zaccolley/tessel-thermalprinter/issues"
   },
-  "dependencies": {
-    "async": "^0.9.0",
-    "deasync": "0.0.10",
-    "get-pixels": "^3.2.1",
-    "serialport": "^1.4.0",
-    "sleep": "^1.1.5"
-  },
-  "devDependencies": {
-    "chai": "^1.9.1",
-    "codeclimate-test-reporter": "0.0.3",
-    "istanbul": "^0.2.10",
-    "jshint": "^2.5.1",
-    "mocha": "^1.19.0"
-  }
+  "homepage": "https://github.com/zaccolley/tessel-thermalprinter"
 }
