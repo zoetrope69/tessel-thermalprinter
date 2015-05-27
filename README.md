@@ -9,4 +9,5 @@
 1. proper async for print function
 2. implement some kind of images functionality
 3. add back in tests/rework to styleguide for tessel modules
-4. better docs than this cmonnn
+4. add back in command delay
+5. better docs than this cmonnn
