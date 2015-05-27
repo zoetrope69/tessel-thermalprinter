@@ -121,8 +121,7 @@ Makes text aligned center
 
 #### Images
 
-&#x20;<a href="#api-printer-printImageData-width-height-imgData" name="api-printer-printImageData-width-height-imgData">#</a> printer<b>.printImageData</b>( width, height, imgData )  
-Prints image. _Image width must be 384px, height cannot exceed 65635px._
+_soooooon_
 
 #### Barcodes
 
@@ -148,7 +147,6 @@ Create an indentation for text by an amount of cplumns
 
 &#x20;<a href="#api-printer-horizontalLine-length" name="api-printer-horizontalLine-length">#</a> printer<b>.horizontalLine</b>( length )  
 Draw a horizontal line at a certain length
-
 
 _check the example, will add the rest later_
 

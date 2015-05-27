@@ -8,7 +8,7 @@ printer module for Tessel.
 
 var tessel = require('tessel');
 var thermalprinter = require('../'); // Replace '../' with 'tessel-thermalprinter' in your own code
-var printer = thermalprinter.use(tessel.port['B']);
+var printer = thermalprinter.use(tessel.port['A']);
 
 printer.on('ready', function(){
 

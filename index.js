@@ -203,6 +203,38 @@ Printer.prototype.printLine = function (text) {
 	return this.writeCommands(commands);
 };
 
+Printer.prototype.parseSpecialLine = function(text) {
+
+	// this is the character codetable from the data sheet in a dodgy string
+    var codeTable = 'ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧' +
+                    'ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜' +
+                    '╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄' +
+                    '▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°··√ⁿ²■';
+
+    var chars = text.split(''); // turn string into array of chars
+    var commands = [];
+    for(var i = 0; i < chars.length; i++){
+        var char = chars[i];
+
+        var charPos = codeTable.indexOf(char);
+
+        // if the char is in the code table
+        if( charPos != -1 ){
+            // get the hex value and push it into new commands list
+            commands.push(charPos + 128);
+        }else{
+			// otherwise it's probably normal text
+            commands.push(new Buffer(char));
+        }
+
+    }
+
+    commands.push(10); // flush command? cant remember but its in printLine
+
+    return printer.writeCommands(commands);
+
+};
+
 // Barcodes
 
 // Set barcodeTextPosition
