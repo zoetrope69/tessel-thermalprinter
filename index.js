@@ -28,9 +28,10 @@ var Printer = function(port, opts, callback) {
 	this.baudrate = opts.baudrate || 19200;
 	/* can be found by doing a print test. hold the button printer while
 	 * powering the printer on and it should spit out some shit at the
-	 * bottom is it should say the baudrate */
+	 * bottom is it should say the baudrate
+	 */
 
-	var uart = new port.UART({ baudrate: this.baudrate }); // baudrate for printer
+	var uart = new port.UART({ baudrate: this.baudrate });
 
 	// uart used by printer
 	if (!uart.write) throw new Error('uart must have a write function');
