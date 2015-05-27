@@ -43,12 +43,9 @@ Printer.prototype.print = function(callback){
 		var command = commands[i];
 
 		_self.uart.write(command);
-
-		console.log(i, commands.length-1, command);
 	}
 
 	setTimeout(function(){
-		console.log('callback');
 		callback();
 	}, 500);
 };
