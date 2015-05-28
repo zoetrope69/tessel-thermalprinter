@@ -1,0 +1,4 @@
+{
+	"node": true,
+	"sub": true, // true: Tolerate using `[]` notation when it can still be expressed in dot notation
+}

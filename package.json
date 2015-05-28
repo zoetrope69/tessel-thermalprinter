@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "tinytap -e 'tessel run {} ${ACCEL_PORT}' test/*.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,8 @@
   "homepage": "https://github.com/zaccolley/tessel-thermalprinter",
   "dependencies": {
     "async": "^1.0.0"
+  },
+  "devDependencies": {
+    "tinytap": "^1.2.2"
   }
 }
