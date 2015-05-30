@@ -231,7 +231,7 @@ Printer.prototype.parseSpecialLine = function(text) {
 
     commands.push(10); // flush command? cant remember but its in printLine
 
-    return printer.writeCommands(commands);
+    return this.writeCommands(commands);
 
 };
 
