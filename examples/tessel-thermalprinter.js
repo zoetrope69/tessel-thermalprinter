@@ -21,9 +21,12 @@ printer.on('ready', function(){
         .inverse(true)
         .big(true)
         .printLine(' TESSEL! ')
+        .big(false)
+        .inverse(false)
         .lineFeed(3)
         .print(function(){
             console.info('Printer finished!');
+            process.exit();
         });
 
 });
