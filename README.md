@@ -1,4 +1,4 @@
-# Thermal Printer for Tessel
+# Thermal printer module for Tessel
 
 [![Build Status](https://travis-ci.org/zaccolley/tessel-thermalprinter.svg)](https://travis-ci.org/zaccolley/tessel-thermalprinter) [![Code Climate](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/badges/gpa.svg)](https://codeclimate.com/github/zaccolley/tessel-thermalprinter) [![Test Coverage](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/badges/coverage.svg)](https://codeclimate.com/github/zaccolley/tessel-thermalprinter/coverage)
 
