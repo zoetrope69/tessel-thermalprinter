@@ -1,13 +1,13 @@
 {
   "name": "tessel-thermalprinter",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "A2 micro panel thermal printer module for Tessel",
   "main": "index.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-      "test": "tinytap -e 'tessel run {} ${ACCEL_PORT}' test/*.js"
+    "test": "tinytap -e 'tessel run {} ${ACCEL_PORT}' test/*.js"
   },
   "repository": {
     "type": "git",

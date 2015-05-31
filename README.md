@@ -16,7 +16,7 @@ npm install tessel-thermalprinter
 + A, B, D ports only. C doesn't support UART yet.
 + Wire it up so: Ground (printer) to Ground (Tessel: Pin 0), RX (printer) to RX/G1 (Tessel: Pin 8) _add pics later_
 
-### Example
+### Examples
 ```js
 var tessel = require('tessel');
 var thermalprinter = require('tessel-thermalprinter');
@@ -41,6 +41,8 @@ printer.on('ready', function(){
 
 });
 ```
+
+For [the Last.fm example](https://github.com/zaccolley/tessel-thermalprinter/blob/master/examples/lastfm.js) you'll need to add a api key. You can [get one here on their website](http://www.last.fm/api).
 
 ### Methods
 
