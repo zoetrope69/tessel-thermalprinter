@@ -1,5 +1,7 @@
 # Thermal printer module for Tessel
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zaccolley/tessel-thermalprinter.svg)](https://greenkeeper.io/)
+
 Support for the A2 micro panel thermal printer module for Tessel.
 
 _This module is based on [xseignard's thermalprinter](https://github.com/xseignard/thermalPrinter) package_
