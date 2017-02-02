@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/zaccolley/tessel-thermalprinter",
   "dependencies": {
-    "async": "^1.0.0"
+    "async": "^2.1.4"
   },
   "devDependencies": {
     "tinytap": "^1.2.2"
